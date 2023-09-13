@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.calculator {
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 15%;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+#result {
+    font-weight: bold;
+    color: red;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+  }
