@@ -1,3 +1,11 @@
+// Заранее заданные значения моделей для каждой марки
+const models = {
+    reno: ["Модель 1", "Модель 2", "Модель 3"],
+    opel: ["Модель A", "Модель B", "Модель C"],
+    mazda: ["Модель X", "Модель Y", "Модель Z"],
+    jaguar: ["Модель I", "Модель II", "Модель III"]
+};
+
 document.addEventListener("DOMContentLoaded", () => {
     const makeSelect = document.getElementById("make");
     const modelSelect = document.getElementById("model");
@@ -6,14 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const calculateBtn = document.getElementById("calculateBtn");
     const resultSpan = document.getElementById("result");
     const errorDiv = document.getElementById("error");
-
-    // Заранее заданные значения моделей для каждой марки
-    const models = {
-        reno: ["Модель 1", "Модель 2", "Модель 3"],
-        opel: ["Модель A", "Модель B", "Модель C"],
-        mazda: ["Модель X", "Модель Y", "Модель Z"],
-        jaguar: ["Модель I", "Модель II", "Модель III"]
-    };
 
     // Обновление списка моделей при изменении марки автомобиля
     makeSelect.addEventListener("change", () => {
@@ -62,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!fuelType) {
             errors.push("Выберите тип топлива");
         }
-        if (isNaN(engineVolume)) {
-            errors.push("Введите корректный объем двигателя");
+        if (isNaN(engineVolume) || engineVolume < 1.1 || engineVolume > 3.5) {
+            errors.push("Введите корректный объем двигателя от 1.1 до 3.5л");
         }
         if (!condition) {
             errors.push("Выберите состояние автомобиля");
